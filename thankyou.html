@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Apex Digital Picks</title>
+<meta name="description" content="You're in! Your first weekly digital picks are on their way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a0f1e;
+    --navy-mid: #111827;
+    --blue: #378ADD;
+    --blue-bright: #4d9de8;
+    --blue-dark: #185FA5;
+    --blue-glow: rgba(55,138,221,0.15);
+    --text-white: #ffffff;
+    --text-muted: #8da8c4;
+    --text-dim: #4a6a8a;
+    --text-light: #c8ddf0;
+    --border: rgba(55,138,221,0.2);
+    --pill-bg: rgba(55,138,221,0.1);
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--text-white);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(55,138,221,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(55,138,221,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; line-height: 1.15; }
+
+  /* NAV */
+  nav {
+    position: relative;
+    z-index: 10;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 5%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--blue); }
+
+  .nav-back {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--text-white); }
+
+  /* MAIN */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .glow-top {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(55,138,221,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .thank-you-box {
+    max-width: 620px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Animated checkmark */
+  .check-wrap {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: rgba(55,138,221,0.1);
+    border: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  .check-wrap svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .check-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: drawCircle 0.6s 0.3s ease forwards;
+  }
+
+  .check-tick {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: drawTick 0.4s 0.8s ease forwards;
+  }
+
+  @keyframes drawCircle {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes drawTick {
+    to { stroke-dashoffset: 0; }
+  }
+
+  .thank-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(15,110,86,0.15);
+    border: 0.5px solid rgba(30,158,117,0.3);
+    color: #4ec8a0;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.5s 0.4s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .thank-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    animation: fadeUp 0.5s 0.5s ease both;
+  }
+
+  .thank-title span { color: var(--blue); }
+
+  .thank-sub {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+    animation: fadeUp 0.5s 0.6s ease both;
+  }
+
+  /* What happens next cards */
+  .next-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.5s 0.7s ease both;
+  }
+
+  .next-card {
+    background: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  .next-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .next-card h3 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  .next-card p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* CTA buttons */
+  .thank-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.5s 0.8s ease both;
+  }
+
+  .btn-primary {
+    background: var(--blue-dark);
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-light);
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 0.5px solid var(--card-border);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { border-color: var(--border); color: #fff; }
+
+  /* Share row */
+  .share-row {
+    animation: fadeUp 0.5s 0.9s ease both;
+  }
+
+  .share-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  .share-btn:hover { border-color: var(--border); color: #fff; }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--card-border);
+    padding: 1.5rem 5%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  .footer-copy a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-copy a:hover { color: var(--text-white); }
+
+  /* CONFETTI */
+  .confetti-piece {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    top: -10px;
+    animation: confettiFall linear forwards;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  @keyframes confettiFall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .next-steps { grid-template-columns: 1fr; }
+    .thank-title { font-size: 2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Apex <span>Digital</span> Picks</a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="glow-top"></div>
+  <div class="thank-you-box">
+
+    <!-- Animated check -->
+    <div class="check-wrap">
+      <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle class="check-circle" cx="26" cy="26" r="25" stroke="#378ADD" stroke-width="1.5" fill="none"/>
+        <path class="check-tick" d="M14 26l8 8 16-16" stroke="#378ADD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="thank-badge">You're confirmed</div>
+
+    <h1 class="thank-title">Welcome to Apex <span>Digital</span> Picks!</h1>
+    <p class="thank-sub">You're in. Your first weekly picks are on their way to your inbox — honest reviews, top tools, and exclusive deals every week.</p>
+
+    <!-- What happens next -->
+    <div class="next-steps">
+      <div class="next-card">
+        <span class="next-icon">📬</span>
+        <h3>Check your inbox</h3>
+        <p>Your confirmation email is on its way. Check spam if you don't see it.</p>
+      </div>
+      <div class="next-card">
+        <span class="next-icon">📅</span>
+        <h3>Picks every week</h3>
+        <p>Every week we send our top 3 digital tool picks with deals and reviews.</p>
+      </div>
+      <div class="next-card">
+        <span class="next-icon">💬</span>
+        <h3>Suggest a tool</h3>
+        <p>Reply to any email with a tool you want reviewed — we read every one.</p>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="thank-actions">
+      <a href="index.html#picks" class="btn-primary">Explore top picks now</a>
+      <a href="index.html#categories" class="btn-secondary">Browse categories</a>
+    </div>
+
+    <!-- Share -->
+    <div class="share-row">
+      <p class="share-label">Share with someone who'd benefit</p>
+      <div class="share-buttons">
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://apexdigitalpicks.github.io/apex-digital-picks" target="_blank" rel="noopener">
+          📘 Facebook
+        </a>
+        <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://apexdigitalpicks.github.io/apex-digital-picks" target="_blank" rel="noopener">
+          💼 LinkedIn
+        </a>
+        <a class="share-btn" href="https://wa.me/?text=Check%20out%20Apex%20Digital%20Picks%20-%20best%20digital%20tools%20and%20software%20reviews%3A%20https://apexdigitalpicks.github.io/apex-digital-picks" target="_blank" rel="noopener">
+          💬 WhatsApp
+        </a>
+        <button class="share-btn" onclick="copyLink()">
+          🔗 Copy link
+        </button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">
+    © 2026 Apex Digital Picks · <a href="index.html">Home</a> · <a href="index.html#picks">Top Picks</a> · <a href="index.html#faq">FAQ</a>
+  </p>
+</footer>
+
+<script>
+  function copyLink() {
+    navigator.clipboard.writeText('https://apexdigitalpicks.github.io/apex-digital-picks').then(() => {
+      const btn = document.querySelector('[onclick="copyLink()"]');
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => btn.textContent = '🔗 Copy link', 2000);
+    });
+  }
+
+  function launchConfetti() {
+    const colors = ['#378ADD', '#185FA5', '#4d9de8', '#ffffff', '#4ec8a0'];
+    for (let i = 0; i < 60; i++) {
+      setTimeout(() => {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        piece.style.animationDelay = (Math.random() * 0.5) + 's';
+        piece.style.width = (Math.random() * 6 + 5) + 'px';
+        piece.style.height = (Math.random() * 6 + 5) + 'px';
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 4000);
+      }, i * 40);
+    }
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(launchConfetti, 400);
+  });
+</script>
+
+</body>
+</html>
