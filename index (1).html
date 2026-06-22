@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Digital Picks — Best Digital Tools & Software Reviews</title>
+<meta name="description" content="We review and recommend the best digital tools, AI software, online courses, and marketing solutions. Independent, trusted, results-focused.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a0f1e;
+    --navy-mid: #111827;
+    --navy-light: #1a2540;
+    --blue: #378ADD;
+    --blue-bright: #4d9de8;
+    --blue-dark: #185FA5;
+    --blue-glow: rgba(55,138,221,0.15);
+    --text-white: #ffffff;
+    --text-muted: #8da8c4;
+    --text-dim: #4a6a8a;
+    --text-light: #c8ddf0;
+    --border: rgba(55,138,221,0.2);
+    --pill-bg: rgba(55,138,221,0.1);
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.15;
+  }
+
+  /* Grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(55,138,221,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(55,138,221,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 5%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--blue); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text-white); }
+
+  .nav-cta {
+    background: var(--blue-dark);
+    color: var(--text-white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .nav-cta:hover { background: var(--blue) !important; color: var(--text-white) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-white);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* SECTIONS */
+  section { position: relative; z-index: 1; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 64px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(55,138,221,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 0 4rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--pill-bg);
+    border: 0.5px solid var(--border);
+    color: var(--blue-bright);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-bright);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  h1.hero-title {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  h1.hero-title span { color: var(--blue); }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+
+  .btn-primary {
+    background: var(--blue-dark);
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-light);
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 0.5px solid var(--card-border);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { border-color: var(--border); color: #fff; }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat { text-align: center; }
+
+  .hero-stat-num {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .hero-stat-label {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .stat-divider {
+    width: 0.5px;
+    background: var(--card-border);
+    align-self: stretch;
+  }
+
+  /* CATEGORIES */
+  #categories {
+    padding: 5rem 0;
+    border-top: 0.5px solid var(--card-border);
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .cat-card {
+    background: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .cat-card:hover {
+    border-color: var(--border);
+    background: rgba(55,138,221,0.06);
+  }
+
+  .cat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .cat-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  .cat-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* FEATURED PICKS */
+  #picks {
+    padding: 5rem 0;
+    border-top: 0.5px solid var(--card-border);
+  }
+
+  .picks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .pick-card {
+    background: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pick-card:hover {
+    border-color: var(--border);
+    transform: translateY(-2px);
+  }
+
+  .pick-card.featured {
+    border-color: var(--blue-dark);
+  }
+
+  .pick-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+  }
+
+  .badge-top { background: rgba(55,138,221,0.15); color: var(--blue-bright); }
+  .badge-hot { background: rgba(217,90,48,0.15); color: #f0836b; }
+  .badge-new { background: rgba(15,110,86,0.15); color: #4ec8a0; }
+
+  .pick-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 0.5px solid var(--card-border);
+  }
+
+  .pick-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  .pick-meta {
+    font-size: 0.78rem;
+    color: var(--blue-bright);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .pick-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  .pick-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .pick-stars span {
+    color: #EF9F27;
+    font-size: 0.85rem;
+  }
+
+  .pick-commission {
+    font-size: 0.8rem;
+    color: #4ec8a0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .pick-link {
+    display: inline-block;
+    color: var(--blue-bright);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 0.5px solid var(--border);
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .pick-link:hover {
+    background: var(--pill-bg);
+    color: #fff;
+  }
+
+  /* HOW IT WORKS */
+  #how {
+    padding: 5rem 0;
+    border-top: 0.5px solid var(--card-border);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .step {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    border-radius: 14px;
+    position: relative;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--pill-bg);
+    border: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--blue-bright);
+    margin: 0 auto 1.25rem;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .step p {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* LEAD CAPTURE */
+  #signup {
+    padding: 5rem 0;
+    border-top: 0.5px solid var(--card-border);
+  }
+
+  .signup-box {
+    background: linear-gradient(135deg, rgba(24,95,165,0.2) 0%, rgba(55,138,221,0.08) 100%);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .signup-box::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(55,138,221,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .signup-box h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .signup-box p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .signup-form {
+    display: flex;
+    gap: 0.75rem;
+    max-width: 460px;
+    margin: 0 auto 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .signup-form input {
+    flex: 1;
+    min-width: 220px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid var(--card-border);
+    color: #fff;
+    padding: 0.8rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .signup-form input::placeholder { color: var(--text-dim); }
+  .signup-form input:focus { border-color: var(--border); }
+
+  .signup-form button {
+    background: var(--blue-dark);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .signup-form button:hover { background: var(--blue); }
+
+  .signup-note {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  /* TESTIMONIALS */
+  #trust {
+    padding: 5rem 0;
+    border-top: 0.5px solid var(--card-border);
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .testi-card {
+    background: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+
+  .testi-stars { margin-bottom: 0.75rem; }
+  .testi-stars span { color: #EF9F27; font-size: 0.9rem; }
+
+  .testi-card blockquote {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testi-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--pill-bg);
+    border: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--blue-bright);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .testi-name { font-size: 0.88rem; font-weight: 500; color: #fff; }
+  .testi-role { font-size: 0.78rem; color: var(--text-dim); }
+
+  /* FAQ */
+  #faq {
+    padding: 5rem 0;
+    border-top: 0.5px solid var(--card-border);
+  }
+
+  .faq-list {
+    max-width: 700px;
+    margin: 2.5rem auto 0;
+  }
+
+  .faq-item {
+    border-bottom: 0.5px solid var(--card-border);
+  }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .faq-q:hover { color: var(--blue-bright); }
+
+  .faq-icon {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--blue-bright); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.open .faq-a { max-height: 200px; }
+
+  .faq-a p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    padding-bottom: 1.25rem;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--card-border);
+    padding: 3rem 5%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .footer-brand span { color: var(--blue); }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text-white); }
+
+  /* MOBILE */
+  @media (max-width: 680px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      background: rgba(10,15,30,0.97);
+      padding: 1.5rem 5%;
+      border-bottom: 0.5px solid var(--border);
+      gap: 1.25rem;
+    }
+    .hamburger { display: flex; }
+    .hero-stats { gap: 1.5rem; }
+    .stat-divider { display: none; }
+    .signup-box { padding: 2rem 1.5rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Apex <span>Digital</span> Picks</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#picks">Top Picks</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#signup" class="nav-cta">Get free picks</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge">Independent Digital Reviews</div>
+      <h1 class="hero-title">Apex <span>Digital</span> Picks</h1>
+      <p class="hero-tagline">Your trusted guide to the best digital tools and software online</p>
+      <p class="hero-desc">We evaluate, recommend, and connect individuals and businesses with the digital products that deliver real results — from AI tools to online courses, marketing software and beyond.</p>
+      <div class="hero-actions">
+        <a href="#picks" class="btn-primary">Explore top picks</a>
+        <a href="#signup" class="btn-secondary">Get weekly picks free</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">500+</span>
+          <span class="hero-stat-label">Products reviewed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">100%</span>
+          <span class="hero-stat-label">Independent</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">Weekly</span>
+          <span class="hero-stat-label">Curated picks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="container">
+    <p class="section-label">What we cover</p>
+    <h2 class="section-title">Digital solutions for every need</h2>
+    <p class="section-sub">From AI tools that save hours to courses that build real skills — we only recommend what we'd use ourselves.</p>
+    <div class="cat-grid">
+      <a href="#picks" class="cat-card">
+        <div class="cat-icon" style="background:rgba(55,138,221,0.12);">🤖</div>
+        <h3>AI Tools</h3>
+        <p>Writing assistants, automation software, chatbot builders and more.</p>
+      </a>
+      <a href="#picks" class="cat-card">
+        <div class="cat-icon" style="background:rgba(15,110,86,0.12);">🎓</div>
+        <h3>Online Courses</h3>
+        <p>E-learning platforms, coaching programs, and professional certifications.</p>
+      </a>
+      <a href="#picks" class="cat-card">
+        <div class="cat-icon" style="background:rgba(83,74,183,0.12);">📈</div>
+        <h3>Marketing Software</h3>
+        <p>Email platforms, SEO tools, and social media schedulers that convert.</p>
+      </a>
+      <a href="#picks" class="cat-card">
+        <div class="cat-icon" style="background:rgba(113,43,19,0.12);">🔒</div>
+        <h3>Security & Hosting</h3>
+        <p>VPNs, web hosting, and domain services for your online presence.</p>
+      </a>
+      <a href="#picks" class="cat-card">
+        <div class="cat-icon" style="background:rgba(99,56,6,0.12);">📄</div>
+        <h3>Templates & Downloads</h3>
+        <p>Business templates, design assets, and ready-to-use digital packs.</p>
+      </a>
+      <a href="#picks" class="cat-card">
+        <div class="cat-icon" style="background:rgba(55,138,221,0.12);">💰</div>
+        <h3>Finance Tools</h3>
+        <p>Budgeting software, invoicing platforms, and business finance apps.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PICKS -->
+<section id="picks">
+  <div class="container">
+    <p class="section-label">Editor's picks</p>
+    <h2 class="section-title">Top digital picks this week</h2>
+    <p class="section-sub">Independently tested. Honest ratings. Only tools that deliver.</p>
+
+  <!-- SHOPIFY AFFILIATE BANNER -->
+  <div style="background:linear-gradient(135deg,rgba(15,110,86,0.2),rgba(55,138,221,0.1));border:0.5px solid rgba(55,138,221,0.3);border-radius:12px;padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+    <div>
+      <p style="font-size:0.75rem;color:#4ec8a0;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.25rem;">🔥 Featured Partner</p>
+      <p style="font-size:1rem;font-weight:600;color:#fff;margin:0;">Start your online store with Shopify — <span style="color:#378ADD;">free trial, no credit card needed</span></p>
+    </div>
+    <a href="https://shopify.pxf.io/m4oJee" target="_blank" rel="noopener" style="background:#185FA5;color:#fff;padding:0.7rem 1.5rem;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;">Try Shopify Free →</a>
+  </div>
+    <div class="picks-grid">
+
+      <div class="pick-card featured">
+        <span class="pick-badge badge-top">Top Pick</span>
+        <div class="pick-logo" style="background:rgba(55,138,221,0.1);">✍️</div>
+        <div class="pick-meta">AI Writing</div>
+        <h3>Jasper AI</h3>
+        <p>The most powerful AI writing assistant for marketers and business owners. Creates blog posts, ads, emails and more in seconds.</p>
+        <div class="pick-stars"><span>★★★★★</span></div>
+        <div class="pick-commission">Up to 30% recurring commission</div>
+        <a href="#signup" class="pick-link">View review →</a>
+      </div>
+
+      <div class="pick-card">
+        <span class="pick-badge badge-hot">Hot</span>
+        <div class="pick-logo" style="background:rgba(15,110,86,0.1);">📧</div>
+        <div class="pick-meta">Email Marketing</div>
+        <h3>GetResponse</h3>
+        <p>All-in-one email marketing, landing pages, webinars, and automation. Perfect for small business owners and online entrepreneurs.</p>
+        <div class="pick-stars"><span>★★★★★</span></div>
+        <div class="pick-commission">Up to 40% recurring commission</div>
+        <a href="#signup" class="pick-link">View review →</a>
+      </div>
+
+      <div class="pick-card">
+        <span class="pick-badge badge-new">New</span>
+        <div class="pick-logo" style="background:rgba(83,74,183,0.1);">🎯</div>
+        <div class="pick-meta">Online Courses</div>
+        <h3>Coursera</h3>
+        <p>World-class online courses from top universities. Certificates that carry real weight with employers and clients.</p>
+        <div class="pick-stars"><span>★★★★☆</span></div>
+        <div class="pick-commission">Up to 45% per sale</div>
+        <a href="#signup" class="pick-link">View review →</a>
+      </div>
+
+      <div class="pick-card">
+        <div class="pick-logo" style="background:rgba(55,138,221,0.1);">🔍</div>
+        <div class="pick-meta">SEO Tools</div>
+        <h3>SEMrush</h3>
+        <p>The industry-standard SEO and content marketing toolkit. Keyword research, competitor analysis, and site audits in one platform.</p>
+        <div class="pick-stars"><span>★★★★★</span></div>
+        <div class="pick-commission">Up to $200 per referral</div>
+        <a href="#signup" class="pick-link">View review →</a>
+      </div>
+
+      <div class="pick-card">
+        <div class="pick-logo" style="background:rgba(15,110,86,0.1);">🛡️</div>
+        <div class="pick-meta">Security</div>
+        <h3>NordVPN</h3>
+        <p>The world's most trusted VPN for privacy and security. Fast, reliable, and essential for remote workers and business owners.</p>
+        <div class="pick-stars"><span>★★★★★</span></div>
+        <div class="pick-commission">Up to 40% per sale</div>
+        <a href="#signup" class="pick-link">View review →</a>
+      </div>
+
+      <div class="pick-card featured">
+        <span class="pick-badge badge-hot">🔥 Featured</span>
+        <div class="pick-logo" style="background:rgba(15,110,86,0.1);">🛒</div>
+        <div class="pick-meta">E-Commerce Platform</div>
+        <h3>Shopify</h3>
+        <p>The world's leading e-commerce platform. Perfect for South African entrepreneurs ready to sell online. Start a free trial — no credit card needed.</p>
+        <div class="pick-stars"><span>★★★★★</span></div>
+        <div class="pick-commission">Up to $150 per referral</div>
+        <a href="https://shopify.pxf.io/m4oJee" target="_blank" rel="noopener" class="pick-link">Start free trial →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <p class="section-label">Our process</p>
+    <h2 class="section-title">How we pick what we recommend</h2>
+    <p class="section-sub">We don't recommend anything we haven't tested. Every tool goes through the same rigorous process.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>We test it</h3>
+        <p>Every product is personally used and tested for at least 30 days before we write a single word.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We rate it honestly</h3>
+        <p>Our ratings are based on real-world results — not marketing claims. We highlight the good and the bad.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>We compare alternatives</h3>
+        <p>We benchmark every pick against competitors so you know exactly why it made our list.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>You decide</h3>
+        <p>No pressure tactics. We give you the facts, the pros, the cons — the final call is always yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section id="signup">
+  <div class="container">
+    <div class="signup-box">
+      <p class="section-label" style="margin-bottom:0.75rem;">Free weekly newsletter</p>
+      <h2>Get the best picks delivered free</h2>
+      <p>Every week we send our top 3 digital tool picks — with exclusive deals and honest reviews. No spam, unsubscribe anytime.</p>
+      <div class="signup-form">
+        <input type="email" placeholder="Your email address" />
+        <button type="button">Get free picks</button>
+      </div>
+      <p class="signup-note">Join free. No credit card. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="trust">
+  <div class="container">
+    <p class="section-label">What readers say</p>
+    <h2 class="section-title">Trusted by digital entrepreneurs</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars"><span>★★★★★</span></div>
+        <blockquote>"Found Jasper AI through Apex Digital Picks and it has completely changed how I create content. Saved me at least 10 hours a week."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">TM</div>
+          <div>
+            <div class="testi-name">Thabo M.</div>
+            <div class="testi-role">Online Business Owner, Johannesburg</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><span>★★★★★</span></div>
+        <blockquote>"The reviews are genuinely honest — they actually tell you what doesn't work. Refreshing compared to every other affiliate site out there."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">SR</div>
+          <div>
+            <div class="testi-name">Sade R.</div>
+            <div class="testi-role">Freelance Marketer, Cape Town</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><span>★★★★★</span></div>
+        <blockquote>"I subscribed to the weekly newsletter and have discovered three tools I now use daily in my business. Absolute gold."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">JP</div>
+          <div>
+            <div class="testi-name">Johan P.</div>
+            <div class="testi-role">Small Business Owner, Pretoria</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">Common questions</p>
+    <h2 class="section-title" style="text-align:center;">Frequently asked</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is Apex Digital Picks free to use?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes, completely free. We earn a small commission when you purchase a product through our links — at no extra cost to you. This is how we keep the lights on while keeping our content free.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are your reviews genuinely independent?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Absolutely. We only recommend products we've personally tested. We don't accept payment for positive reviews, and we always disclose our affiliate relationships upfront.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do the products cost extra if I buy through your links?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Never. Affiliate links cost you exactly the same as going directly to the vendor. Sometimes we even negotiate exclusive discounts for our readers.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How often do you update your reviews?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>All reviews are updated at least every 90 days. Software changes fast — we stay on top of pricing, feature updates, and new alternatives so your information is always current.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I suggest a product for review?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes! We love reader suggestions. Join our newsletter and reply to any email with your suggestion — we read every one and add the best candidates to our review queue.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Apex <span>Digital</span> Picks</div>
+      <div class="footer-copy">© 2026 Apex Digital Picks · Digital Solutions. All rights reserved.</div>
+    </div>
+    <nav class="footer-links">
+      <a href="#categories">Categories</a>
+      <a href="#picks">Top Picks</a>
+      <a href="#how">How it works</a>
+      <a href="#signup">Newsletter</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.cat-card, .pick-card, .step, .testi-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+
+</body>
+</html>
