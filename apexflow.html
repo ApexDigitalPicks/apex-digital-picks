@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ApexFlow | WhatsApp AI Agent for SA Businesses | Apex Digital Picks</title>
+<meta name="description" content="ApexFlow answers your business WhatsApp 24/7 from your own price list, in English, Afrikaans, isiZulu or Sepedi. Nothing sends without your approval. From R1,490/mo.">
+<style>
+  :root {
+    --charcoal: #1d1b17;
+    --panel: #26241f;
+    --line: #3a372f;
+    --amber: #c99a2e;
+    --amber-soft: #e0b859;
+    --cream: #f5f1e8;
+    --muted: #9a938a;
+    --green: #6a9c77;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--charcoal); color: var(--cream);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--amber); }
+
+  /* Header */
+  header { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .mark { font-weight: 800; letter-spacing: 0.12em; font-size: 18px;
+          color: var(--cream); text-decoration: none; }
+  .mark span { color: var(--amber); }
+  .btn {
+    display: inline-block; background: var(--amber); color: var(--charcoal);
+    font-weight: 700; text-decoration: none; padding: 12px 26px;
+    border-radius: 8px; transition: background .15s;
+  }
+  .btn:hover { background: var(--amber-soft); }
+  .btn.small { padding: 9px 18px; font-size: 14px; }
+  .btn.ghost { background: transparent; color: var(--amber);
+               border: 1px solid var(--amber); }
+
+  /* Hero */
+  .hero { padding: 84px 0 64px; text-align: center; }
+  .hero h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.15;
+             max-width: 780px; margin: 0 auto 18px; }
+  .hero h1 em { color: var(--amber); font-style: normal; }
+  .hero p { color: var(--muted); font-size: 18px; max-width: 640px;
+            margin: 0 auto 30px; }
+  .hero .sub { font-size: 14px; margin-top: 14px; color: var(--muted); }
+
+  /* Sections */
+  section { padding: 56px 0; }
+  section.alt { background: var(--panel); border-top: 1px solid var(--line);
+                border-bottom: 1px solid var(--line); }
+  h2 { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+       color: var(--amber); margin-bottom: 28px; }
+  h3 { font-size: 26px; margin-bottom: 12px; }
+
+  /* Features grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 22px; }
+  .feature { background: var(--panel); border: 1px solid var(--line);
+             border-radius: 10px; padding: 22px; }
+  section.alt .feature { background: var(--charcoal); }
+  .feature b { display: block; font-size: 16px; margin-bottom: 8px; }
+  .feature p { color: var(--muted); font-size: 14.5px; }
+  .feature .plus { color: var(--green); font-weight: 800; margin-right: 6px; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           gap: 18px; counter-reset: step; }
+  .step { background: var(--charcoal); border: 1px solid var(--line);
+          border-radius: 10px; padding: 20px; }
+  .step .num { font-size: 26px; font-weight: 800; color: var(--amber); }
+  .step p { font-size: 14px; color: var(--cream); margin-top: 8px; }
+
+  /* Pricing */
+  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+           gap: 22px; align-items: stretch; }
+  .plan { background: var(--panel); border: 1px solid var(--line);
+          border-radius: 12px; padding: 26px; position: relative;
+          display: flex; flex-direction: column; }
+  .plan.featured { border-color: var(--amber); }
+  .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+           background: var(--amber); color: var(--charcoal); font-size: 11px;
+           font-weight: 800; letter-spacing: .08em; padding: 4px 14px;
+           border-radius: 999px; }
+  .plan .tier { color: var(--amber); font-weight: 800; letter-spacing: .12em;
+                font-size: 13px; }
+  .plan .price { font-size: 34px; font-weight: 800; margin: 10px 0 2px; }
+  .plan .price small { font-size: 15px; color: var(--muted); font-weight: 400; }
+  .plan .setup { color: var(--muted); font-size: 13.5px; margin-bottom: 16px; }
+  .plan ul { list-style: none; margin: 0 0 22px; flex: 1; }
+  .plan li { font-size: 14.5px; padding: 6px 0 6px 22px; position: relative;
+             border-bottom: 1px solid var(--line); }
+  .plan li:last-child { border-bottom: none; }
+  .plan li::before { content: "+"; color: var(--green); font-weight: 800;
+                     position: absolute; left: 0; }
+  .plan li.hdr { color: var(--muted); font-style: italic; padding-left: 0; }
+  .plan li.hdr::before { content: ""; }
+  .plan .btn { text-align: center; }
+
+  /* Fine print */
+  .fineprint { background: var(--panel); border: 1px solid var(--line);
+               border-radius: 10px; padding: 24px; color: var(--muted);
+               font-size: 14.5px; }
+  .fineprint b { color: var(--cream); }
+
+  /* FAQ */
+  details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  summary { cursor: pointer; font-weight: 600; font-size: 16px;
+            list-style: none; position: relative; padding-right: 26px; }
+  summary::after { content: "+"; color: var(--amber); position: absolute;
+                   right: 0; font-weight: 800; }
+  details[open] summary::after { content: "\2013"; }
+  details p { color: var(--muted); font-size: 14.5px; margin-top: 10px;
+              max-width: 720px; }
+
+  /* Final CTA */
+  .final { text-align: center; padding: 70px 0; }
+  .final h3 { font-size: clamp(24px, 4vw, 34px); max-width: 640px;
+              margin: 0 auto 14px; }
+  .final p { color: var(--muted); margin-bottom: 26px; }
+
+  footer { border-top: 1px solid var(--line); padding: 26px 0;
+           color: var(--muted); font-size: 13.5px; text-align: center; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 56px 0 44px; }
+    section { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="/">APEX<span>FLOW</span></a>
+    <a class="btn small" href="https://wa.me/27726681698?text=DEMO"
+       target="_blank" rel="noopener">Get a demo</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Your WhatsApp answers customers 24/7. <em>You approve every reply before it sends.</em></h1>
+    <p>ApexFlow is an AI agent for South African businesses. It answers questions
+       from your own price list, qualifies leads, drafts quotes, and speaks your
+       customers' language. Nothing goes out without your say-so.</p>
+    <a class="btn" href="https://wa.me/27726681698?text=DEMO" target="_blank"
+       rel="noopener">WhatsApp "DEMO" for a live walkthrough</a>
+    <p class="sub">We load your actual prices and let you try to trick it. No contract.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>The problem</h2>
+    <h3>The lead that messages at 21:00 does not wait until Monday.</h3>
+    <p style="color:var(--muted); max-width:720px;">Most SA businesses run on
+       WhatsApp, but nobody can answer around the clock. Generic chatbots are
+       worse: one invented price or made-up discount and you are stuck honouring
+       it. ApexFlow was built the other way around, accuracy first, human in
+       control.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="feature"><b><span class="plus">+</span>Answers questions, accurately</b>
+        <p>Replies come only from your knowledge base: your prices, policies and
+           hours. The agent is blocked from inventing anything that is not in it.
+           Anything unclear goes to a human.</p></div>
+      <div class="feature"><b><span class="plus">+</span>Qualifies every lead</b>
+        <p>Collects name, company, what they need and when, naturally in
+           conversation. Leads appear in your dashboard ready to follow up.</p></div>
+      <div class="feature"><b><span class="plus">+</span>Drafts quotes with a PDF</b>
+        <p>Built from your price list only, with VAT breakdown, on your
+           letterhead. One tap to approve and the customer receives it in
+           WhatsApp.</p></div>
+      <div class="feature"><b><span class="plus">+</span>Takes booking requests</b>
+        <p>Gathers dates, items and site details. It never confirms a booking as
+           final. Your team always makes the call.</p></div>
+      <div class="feature"><b><span class="plus">+</span>Speaks 4 languages</b>
+        <p>English, Afrikaans, isiZulu and Sepedi. The agent replies in whichever
+           language the customer writes or speaks.</p></div>
+      <div class="feature"><b><span class="plus">+</span>Understands voice notes</b>
+        <p>Voice notes are transcribed and handled like text. If a note cannot be
+           understood, the agent politely asks the customer to type it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div>
+        <p>A customer messages your WhatsApp number.</p></div>
+      <div class="step"><div class="num">2</div>
+        <p>The agent drafts a reply from your knowledge base.</p></div>
+      <div class="step"><div class="num">3</div>
+        <p>You approve, edit or reject it in your dashboard.</p></div>
+      <div class="step"><div class="num">4</div>
+        <p>The customer gets an accurate answer in minutes.</p></div>
+    </div>
+    <p style="color:var(--muted); font-size:14px; margin-top:20px;">
+      POPIA built in: consent notice on first contact, instant STOP opt-out
+      handled by a human, and all customer data stored on your own server in
+      South Africa. No third party analytics.</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <div class="plans">
+      <div class="plan">
+        <div class="tier">STARTER</div>
+        <div class="price">R1,490<small>/mo</small></div>
+        <div class="setup">+ R3,500 once-off setup</div>
+        <ul>
+          <li>FAQ answering from your knowledge base</li>
+          <li>Lead capture and dashboard</li>
+          <li>English and Afrikaans</li>
+          <li>Every reply human-approved</li>
+          <li>POPIA consent and opt-out</li>
+        </ul>
+        <a class="btn ghost" href="https://wa.me/27726681698?text=DEMO%20Starter"
+           target="_blank" rel="noopener">Ask about Starter</a>
+      </div>
+      <div class="plan featured">
+        <div class="badge">MOST POPULAR</div>
+        <div class="tier">PROFESSIONAL</div>
+        <div class="price">R2,900<small>/mo</small></div>
+        <div class="setup">+ R5,900 once-off setup</div>
+        <ul>
+          <li class="hdr">Everything in Starter, plus:</li>
+          <li>Booking requests</li>
+          <li>Quotes with branded PDF and VAT</li>
+          <li>isiZulu and Sepedi</li>
+          <li>Voice note transcription</li>
+        </ul>
+        <a class="btn" href="https://wa.me/27726681698?text=DEMO%20Professional"
+           target="_blank" rel="noopener">Ask about Professional</a>
+      </div>
+      <div class="plan">
+        <div class="tier">PREMIUM</div>
+        <div class="price">R4,900<small>/mo</small></div>
+        <div class="setup">+ R8,900 once-off setup</div>
+        <ul>
+          <li class="hdr">Everything in Professional, plus:</li>
+          <li>Auto-send for routine replies after a 30 day proving period</li>
+          <li>Monthly knowledge base tuning</li>
+          <li>Priority support</li>
+          <li>Quarterly performance review</li>
+        </ul>
+        <a class="btn ghost" href="https://wa.me/27726681698?text=DEMO%20Premium"
+           target="_blank" rel="noopener">Ask about Premium</a>
+      </div>
+    </div>
+    <div class="fineprint" style="margin-top:26px;">
+      <b>The honest fine print.</b> We do not promise a fixed number of leads or
+      sales. What we promise is that every customer gets an accurate, on-brand
+      answer, fast, and that nothing goes out without your approval. Meta's
+      WhatsApp conversation fees and AI usage are billed at cost, typically a
+      few hundred rand per month for a small business. You will need a privacy
+      policy on your website; we provide a POPIA starter template for your
+      attorney to review. Month to month, no long contracts.
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Questions owners ask us</h2>
+    <details>
+      <summary>What stops it saying something wrong to my customers?</summary>
+      <p>Three things. It may only use facts from your own knowledge base and
+         price list. If a customer asks about anything not covered, it hands
+         over to a human instead of guessing. And by default every single reply
+         waits in your dashboard until you approve it.</p>
+    </details>
+    <details>
+      <summary>Will my customers know it is AI?</summary>
+      <p>Yes, by design. The first message identifies it as an AI assistant, as
+         POPIA good practice requires, and if a customer asks, it says so. Trust
+         is the product.</p>
+    </details>
+    <details>
+      <summary>What do I need to get started?</summary>
+      <p>A WhatsApp Business number, your price list and policies (we help you
+         structure them), and about a week for setup and testing. You review
+         replies from your phone or laptop.</p>
+    </details>
+    <details>
+      <summary>What does it not do?</summary>
+      <p>It does not check live stock or calendar availability out of the box,
+         it does not confirm bookings as final, and it does not process images
+         yet. Complex custom quotes always route to your team. If your business
+         needs system integrations, ask us about it in the demo.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h3>See it answer your own customers' questions.</h3>
+    <p>We load your actual prices and policies, then you try to trick it.
+       15 minutes on WhatsApp.</p>
+    <a class="btn" href="https://wa.me/27726681698?text=DEMO" target="_blank"
+       rel="noopener">WhatsApp "DEMO" to 072 668 1698</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>ApexFlow is a product of Apex Digital Picks, Pretoria, South Africa.</p>
+    <p><a href="mailto:info@apexdigitalpicks.com">info@apexdigitalpicks.com</a>
+       &nbsp;|&nbsp; <a href="/">apexdigitalpicks.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
